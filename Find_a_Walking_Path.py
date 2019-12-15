@@ -23,8 +23,8 @@ def findcoor(lat, lon, distance, bearing):
 
 def geocode(current):
     current = current.replace(' ', '+')
-    endpoint = 'yourapikey'
-    api_key = 'AIzaSyBTcJcpE8loo8Hmel4kVw5hXa8VOv2FLoo'
+    endpoint = 'https://maps.googleapis.com/maps/api/geocode/json?'
+    api_key = 'yourapikey'
     nav_request = 'address={}&key={}'.format(current, api_key)
     request = endpoint+nav_request
     response = urllib.request.urlopen(request).read()
