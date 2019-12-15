@@ -23,7 +23,7 @@ def findcoor(lat, lon, distance, bearing):
 
 def geocode(current):
     current = current.replace(' ', '+')
-    endpoint = 'https://maps.googleapis.com/maps/api/geocode/json?'
+    endpoint = 'yourapikey'
     api_key = 'AIzaSyBTcJcpE8loo8Hmel4kVw5hXa8VOv2FLoo'
     nav_request = 'address={}&key={}'.format(current, api_key)
     request = endpoint+nav_request
@@ -41,7 +41,7 @@ def getlegs(lat1, lon1, lat2, lon2):
     # print(coor2)
     # Google MapsDdirections API endpoint
     endpoint = 'https://maps.googleapis.com/maps/api/directions/json?'
-    api_key = 'AIzaSyBTcJcpE8loo8Hmel4kVw5hXa8VOv2FLoo'
+    api_key = 'yourapikey'
     # Asks the user to input Where they are and where they want to go.
     origin = coor1.replace(' ', '+')
     destination = coor2.replace(' ', '+')
@@ -91,7 +91,7 @@ def getinstructions(leg):
 def visualize(location):
     import requests, webbrowser
     endpoint = 'https://maps.googleapis.com/maps/api/staticmap?'
-    api_key = 'AIzaSyBTcJcpE8loo8Hmel4kVw5hXa8VOv2FLoo'
+    api_key = 'yourapikey'
     location = location.replace(' ', '+')
     center = location
     zoom = 17
@@ -115,7 +115,7 @@ def visualize(lats, lons, slats, slons):
     # ^black circle things
     gmap.marker(slats[0], slons[0], title='START')
 
-    gmap.apikey = 'AIzaSyBTcJcpE8loo8Hmel4kVw5hXa8VOv2FLoo'
+    gmap.apikey = 'yourapikey'
     # Pass the absolute path
     gmap.draw("C:\\Users\\darks\\Desktop\\map11.html")
 
